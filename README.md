@@ -114,7 +114,7 @@ Built a customer retention prioritization tool using 500K+ public retail transac
 ## Possible next steps
 
 Add a churn model if suitable outcome labels can be defined
-Compare retention patterns across countries or customer groups
-Explore product affinities and repeat-purchase behavior
-Test different prioritization rules against campaign-response data
-Add next-best-product recommendations
+- Compare retention patterns across countries or customer groups
+- Explore product affinities and repeat-purchase behavior
+- Test different prioritization rules against campaign-response data
+- Add next-best-product recommendations
