@@ -107,11 +107,11 @@ A customer becomes a `PriorityTarget` when they are:
 
 This is a **business rule**, not a causal claim. A stronger future version could validate the weights through campaign outcomes.
 
-##Project summary
+## Project summary
 
 Built a customer retention prioritization tool using 500K+ public retail transactions. The project combines data cleaning, RFM analysis, SQL-based KPI reporting, cohort analysis, and an interactive Streamlit dashboard to identify high-value customers who may be worth re-engaging.
 
-##Possible next steps
+## Possible next steps
 
 Add a churn model if suitable outcome labels can be defined
 Compare retention patterns across countries or customer groups
