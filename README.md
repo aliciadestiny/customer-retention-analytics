@@ -5,7 +5,11 @@ A portfolio project that turns transaction data into a **management decision**:
 
 > If the retailer has limited retention budget, which customers should it contact first?
 >
-> https://customer-retention-analytics-optimal-impact.streamlit.app/
+> Try the live demo here : https://customer-retention-analytics-optimal-impact.streamlit.app/
+
+This project uses the UCI Online Retail dataset to identify which customers may be worth re-engaging.
+
+Data note: The UCI Online Retail dataset was chosen because it provides a large, well-structured public transaction dataset suitable for customer-level analysis. The data covers 2010–2011, so the findings should not be interpreted as reflecting current retail trends. The purpose of the project is to demonstrate the analytical approach and decision framework rather than draw conclusions about today’s market.
 
 ## Why this project exists
 
