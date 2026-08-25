@@ -12,6 +12,7 @@ from retention_analysis import (
     headline_kpis,
     load_raw_data,
     monthly_kpis,
+    build_cohort_retention,
 )
 
 st.set_page_config(page_title="Retention Prioritizer", layout="wide")
@@ -101,6 +102,27 @@ targets = (
         "CustomerID", "Country", "Recency", "Frequency", "Monetary",
         "AverageOrderValue", "Segment", "RetentionPriority"
     ]]
+)
+
+st.subheader("5. Retention over time")
+
+retention = build_cohort_retention(sales)
+
+fig4 = px.imshow(
+    retention,
+    aspect="auto",
+    labels={
+        "x": "Months since first purchase",
+        "y": "Customer cohort",
+        "color": "Retention rate"
+    }
+)
+
+st.plotly_chart(fig4, use_container_width=True)
+
+st.caption(
+    "Each row represents customers grouped by the month of their first purchase. "
+    "The chart shows what share returned in later months."
 )
 
 st.dataframe(
