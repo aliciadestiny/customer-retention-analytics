@@ -95,6 +95,7 @@ with right:
     st.plotly_chart(fig3, use_container_width=True)
 
 st.subheader("4. Recommended retention targets")
+
 targets = (
     customer_view.loc[customer_view["PriorityTarget"]]
     .sort_values("RetentionPriority", ascending=False)
@@ -104,9 +105,35 @@ targets = (
     ]]
 )
 
+st.dataframe(
+    targets.head(100),
+    use_container_width=True,
+    hide_index=True,
+    column_config={
+        "Monetary": st.column_config.NumberColumn(
+            "Historical value",
+            format="£%.2f"
+        ),
+        "AverageOrderValue": st.column_config.NumberColumn(
+            "AOV",
+            format="£%.2f"
+        ),
+        "RetentionPriority": st.column_config.ProgressColumn(
+            "Priority score",
+            min_value=0,
+            max_value=100
+        ),
+    },
+)
+
+st.info(
+    "Customers are shortlisted if they are high-value and relatively inactive. "
+    "Within that group, priority is ranked using inactivity and past purchase frequency."
+)
+
 st.subheader("5. Retention over time")
 
-retention = build_cohort_retention(sales)
+retention = build_cohort_retention(sales_view)
 
 fig4 = px.imshow(
     retention,
@@ -123,22 +150,4 @@ st.plotly_chart(fig4, use_container_width=True)
 st.caption(
     "Each row represents customers grouped by the month of their first purchase. "
     "The chart shows what share returned in later months."
-)
-
-st.dataframe(
-    targets.head(100),
-    use_container_width=True,
-    hide_index=True,
-    column_config={
-        "Monetary": st.column_config.NumberColumn("Historical value", format="£%.2f"),
-        "AverageOrderValue": st.column_config.NumberColumn("AOV", format="£%.2f"),
-        "RetentionPriority": st.column_config.ProgressColumn(
-            "Priority score", min_value=0, max_value=100
-        ),
-    },
-)
-
-st.info(
-    "Decision rule: prioritize customers who are both high-value and showing signs "
-    "of lapse. The score combines historical value, purchase frequency and inactivity."
 )
