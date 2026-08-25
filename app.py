@@ -5,7 +5,7 @@ import pandas as pd
 import plotly.express as px
 import streamlit as st
 
-from src.retention_analysis import (
+from retention_analysis import (
     build_customer_rfm,
     build_segment_summary,
     clean_transactions,
