@@ -4,6 +4,8 @@
 A portfolio project that turns transaction data into a **management decision**:
 
 > If the retailer has limited retention budget, which customers should it contact first?
+>
+> https://customer-retention-analytics-optimal-impact.streamlit.app/
 
 ## Why this project exists
 
